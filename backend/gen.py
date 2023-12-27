@@ -68,14 +68,16 @@ def gen_rand_password(length: int):
     return password[:length]
 
 
+DEFAULT_PASSWORD_SIZE = 500
+
 def gen_256_key() -> str:
-    key: bytes = gen_rand_password(2000).encode()
+    key: bytes = gen_rand_password(DEFAULT_PASSWORD_SIZE).encode()
     print("Generating 256-bit key...")
     return sha256(key).hexdigest().upper()
 
 
 def gen_512_key():
-    key: bytes = gen_rand_password(2000).encode()
+    key: bytes = gen_rand_password(DEFAULT_PASSWORD_SIZE).encode()
     print("Generating 512-bit key...")
     return sha512(key).hexdigest().upper()
 
