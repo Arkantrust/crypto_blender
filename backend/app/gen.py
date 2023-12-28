@@ -1,6 +1,5 @@
 import secrets
 from hashlib import sha256, sha512
-from pyperclip import copy
 
 filename = "words.txt"
 
@@ -95,6 +94,8 @@ def print_menu() -> None:
 
 
 if __name__ == "__main__":
+    from pyperclip import copy
+
     print_menu()
     choice = input("$ ")
 
